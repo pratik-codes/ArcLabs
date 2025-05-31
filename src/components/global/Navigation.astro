@@ -1,0 +1,189 @@
+<div class="fixed top-4 inset-x-0 z-50 animate-fadeIn">
+  <div class="max-w-2xl mx-auto px-8">
+    <div class="w-full mx-auto">
+      <div
+        x-data="{ open: false }"
+        class="relative flex flex-col w-full p-3 mx-auto bg-white dark:bg-zinc-800 ring-1 uppercase ring-zinc-200 dark:ring-zinc-700 backdrop-blur-xl backdrop-filter rounded-xl md:rounded-full md:items-center md:justify-between md:flex-row transition-all duration-300"
+      >
+        <div
+          class="flex flex-row items-center justify-between md:justify-start"
+        >
+          <a
+            class="text-black dark:text-white hover:text-black/50 dark:hover:text-white/50 gap-4 items-center tracking-tighter inline-flex font-bold text-xl transition-colors duration-200"
+            href="/" title="ArcLabs - Creative Tech Agency"
+          >
+          <svg class="h-8" viewBox="0 0 201 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_1_980)">
+            <mask id="mask0_1_980" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="201" height="200">
+            <path d="M200.5 0H0.5V200H200.5V0Z" fill="white"/>
+            </mask>
+            <g mask="url(#mask0_1_980)">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M100.5 200C155.728 200 200.5 155.228 200.5 100C200.5 44.7715 155.728 0 100.5 0C45.2715 0 0.5 44.7715 0.5 100C0.5 155.228 45.2715 200 100.5 200ZM100.5 143.75C124.662 143.75 144.25 124.162 144.25 100C144.25 75.8375 124.662 56.25 100.5 56.25C76.3375 56.25 56.75 75.8375 56.75 100C56.75 124.162 76.3375 143.75 100.5 143.75Z" fill="black" class="dark:fill-white"/>
+            </g>
+            </g>
+            <defs>
+            <clipPath id="clip0_1_980">
+            <rect width="200" height="200" fill="white" transform="translate(0.5)"/>
+            </clipPath>
+            </defs>
+            </svg>
+            <span class="normal-case">ArcLabs</span>
+          </a><button
+            @click="open = !open"
+            class="inline-flex items-center justify-center p-2 text-zinc-400 dark:text-zinc-500 hover:text-cyan-300 dark:hover:text-cyan-400 focus:outline-none focus:text-black dark:focus:text-white md:hidden transition-colors duration-200"
+            ><svg
+              class="w-6 h-6"
+              stroke="currentColor"
+              fill="none"
+              viewBox="0 0 24 24"
+              ><path
+                :class="{'hidden': open, 'inline-flex': !open }"
+                class="inline-flex"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"></path><path
+                :class="{'hidden': !open, 'inline-flex': open }"
+                class="hidden"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"></path></svg
+            ></button
+          >
+        </div><nav
+          :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow hidden py-12 md:py-0 md:flex md:items-end justify-center md:flex-row"
+        >
+          <ul
+            class="space-y-2 list-none text-xs text-zinc-600 dark:text-zinc-400 md:space-y-0 font-medium md:ml-auto items-center md:flex justify-center text-center md:text-left gap-3"
+          >
+            <li>
+              <a href="#how" class="hover:text-black dark:hover:text-white shrink-0 transition-colors duration-200">Approach</a>
+            </li>
+            <li>
+              <a href="#work" class="hover:text-black dark:hover:text-white shrink-0 transition-colors duration-200">Research</a>
+            </li>
+
+            <li>
+              <a href="#services" class="hover:text-black dark:hover:text-white shrink-0 transition-colors duration-200">Focus Areas</a>
+            </li>
+            <!-- <li>
+              <a href="#founder" class="hover:text-black dark:hover:text-white shrink-0 transition-colors duration-200">About</a>
+            </li> -->
+            <li class="shrink-0">
+              <button
+                id="theme-toggle"
+                class="p-2 rounded-full hover:bg-zinc-100 dark:hover:bg-zinc-700 transition-all duration-200 transform hover:scale-110"
+                aria-label="Toggle theme"
+              >
+                <svg id="theme-toggle-light-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-zinc-400">
+                  <circle cx="12" cy="12" r="5"></circle>
+                  <line x1="12" y1="1" x2="12" y2="3"></line>
+                  <line x1="12" y1="21" x2="12" y2="23"></line>
+                  <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                  <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                  <line x1="1" y1="12" x2="3" y2="12"></line>
+                  <line x1="21" y1="12" x2="23" y2="12"></line>
+                  <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                  <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                </svg>
+                <svg id="theme-toggle-dark-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 dark:text-zinc-400 hidden">
+                  <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                </svg>
+              </button>
+            </li>
+            <!-- <li class="shrink-0">
+              <a
+                href="mailto:hello@arclabs.dev"
+                class="py-2 w-auto px-4 border-2 h-8 focus:ring-2 rounded-full border-black dark:border-white bg-white dark:bg-zinc-800 hover:bg-transparent dark:hover:bg-transparent text-black dark:text-white duration-200 focus:ring-offset-2 hover:text-black dark:hover:text-white inline-flex items-center justify-center ring-2 focus:ring-black dark:focus:ring-white ring-transparent transition-all transform hover:scale-105"
+              >
+                Connect</a
+              >
+            </li> -->
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  // Theme toggle functionality
+  function initThemeToggle() {
+    const themeToggle = document.getElementById('theme-toggle');
+    const lightIcon = document.getElementById('theme-toggle-light-icon');
+    const darkIcon = document.getElementById('theme-toggle-dark-icon');
+    
+    if (!themeToggle || !lightIcon || !darkIcon) return;
+    
+    function updateThemeToggleIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      
+      if (isDark) {
+        lightIcon.classList.add('hidden');
+        darkIcon.classList.remove('hidden');
+      } else {
+        lightIcon.classList.remove('hidden');
+        darkIcon.classList.add('hidden');
+      }
+    }
+    
+    // Update icon on initialization
+    updateThemeToggleIcon();
+    
+    // Theme toggle click handler
+    themeToggle.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.classList.contains('dark');
+      
+      if (isDark) {
+        html.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+      }
+      
+      updateThemeToggleIcon();
+    });
+    
+    // Watch for theme changes from other sources (like BaseLayout initialization)
+    const observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+          updateThemeToggleIcon();
+        }
+      });
+    });
+    
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class']
+    });
+  }
+  
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initThemeToggle);
+  } else {
+    initThemeToggle();
+  }
+</script>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+</style>

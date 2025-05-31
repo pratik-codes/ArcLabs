@@ -1,0 +1,42 @@
+---
+import BaseHead from "@/components/BaseHead.astro";
+import Navigation from "@/components/global/Navigation.astro"
+import Footer from "@/components/global/Footer.astro"
+---
+
+<html lang="en" class="scroll-smooth selection:bg-black selection:text-white dark:selection:bg-white dark:selection:text-black">
+  <head>
+    <BaseHead />
+    <script is:inline>
+      // Theme initialization - run immediately to prevent flash
+      (function() {
+        const theme = (() => {
+          if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+            return localStorage.getItem('theme');
+          }
+          if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+            return 'dark';
+          }
+
+          return 'light';
+        })();
+
+        console.log("theme", theme);
+
+        if (theme === 'dark') {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+        
+        window.localStorage.setItem('theme', theme);
+      })();
+    </script>
+  </head>
+  <body class="bg-zinc-100 dark:bg-black flex flex-col min-h-screen mx-auto 2xl:max-w-screen-xl relative transition-colors duration-300">
+
+    <Navigation/>
+    <main class="flex-grow"><slot /></main>
+    <Footer/>
+  </body>
+</html>

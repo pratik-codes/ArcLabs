@@ -1,0 +1,103 @@
+---
+import { work } from "@/data/work.json";
+---
+
+<section class="scroll-mt-24" id="work">
+  <div class="px-8 md:px-12 py-24 max-w-2xl mx-auto">
+    <div class="mb-12 animate-fadeIn">
+      <h2 class="text-3xl tracking-tighter font-light text-black dark:text-white mb-4">
+        Our Products
+      </h2>
+      <p class="text-zinc-600 dark:text-zinc-300">
+        Born from extensive research and experimentation, our products represent the future of technology. Each one solves real problems with innovative approaches.
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      {work.map((project, index) => (
+        <div 
+          class="relative bg-white dark:bg-zinc-800 rounded-3xl p-8 transition-all duration-300 transform hover:scale-[1.02] animate-slideUp overflow-hidden group"
+          style={`animation-delay: ${index * 150}ms`}
+        >
+    
+          
+          {/* Content wrapper with inner background */}
+          <div class="relative bg-white dark:bg-zinc-800 rounded-2xl p-1">
+            <div class="flex items-start justify-between mb-6">
+              <div>
+                <h3 class="text-2xl font-medium text-black dark:text-white mb-2 group-hover:text-zinc-700 dark:group-hover:text-zinc-200 transition-colors duration-300">
+                  {project.title}
+                </h3>
+                <span class="inline-flex items-center gap-1.5 text-xs font-medium text-zinc-600 dark:text-zinc-400 bg-gradient-to-r from-zinc-100 to-zinc-50 dark:from-zinc-700 dark:to-zinc-750 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-600">
+                  <div class="w-1.5 h-1.5 rounded-full bg-zinc-400 dark:bg-zinc-500"></div>
+                  {project.type}
+                </span>
+              </div>
+              <div class="opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-400 dark:text-zinc-500">
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </div>
+            </div>
+            
+            <p class="text-zinc-600 dark:text-zinc-300 mb-6 leading-relaxed">
+              {project.description}
+            </p>
+            
+            <div class="flex items-center justify-between">
+              <a
+                href={project.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-2.5 text-sm font-medium text-black dark:text-white bg-zinc-100 dark:bg-zinc-700 hover:bg-zinc-200 dark:hover:bg-zinc-600 px-4 py-2 rounded-full transition-all duration-200 group/link"
+              >
+                <span>View Project</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transform group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-transform duration-200">
+                  <path d="M7 17L17 7"></path>
+                  <path d="M7 7h10v10"></path>
+                </svg>
+              </a>
+              
+              <div class="flex gap-2">
+                <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                <span class="text-xs text-zinc-500 dark:text-zinc-400">Active</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fadeIn {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    opacity: 0;
+    animation: slideUp 0.6s ease-out forwards;
+  }
+</style>
